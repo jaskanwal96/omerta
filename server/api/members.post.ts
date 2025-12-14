@@ -21,15 +21,15 @@ export default defineEventHandler(async (event) => {
     }
 
     const newMember = {
-        id: uuidv4(), // We will simple random ID for now, assume uuid is available or use simpler one
+        id: uuidv4(),
         ...body,
         status: 'pending',
         submittedAt: new Date().toISOString()
     }
 
-    // Fallback simple ID if uuid package not installed (I didn't install it, so let's use random string)
-    if (!newMember.id) {
-        newMember.id = Math.random().toString(36).substring(2, 15)
+    // ensure reportsTo is stored if present, undefined if not
+    if (body.reportsTo) {
+        newMember.reportsTo = body.reportsTo
     }
 
     pending.push(newMember)

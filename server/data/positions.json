@@ -1,0 +1,149 @@
+[
+    {
+        "id": "genovese-boss-1931",
+        "personId": "luciano",
+        "familyId": "genovese",
+        "role": "Boss",
+        "startYear": 1931,
+        "endYear": 1946
+    },
+    {
+        "id": "genovese-consig-1931",
+        "personId": "costello",
+        "familyId": "genovese",
+        "role": "Consigliere",
+        "startYear": 1931,
+        "endYear": 1957,
+        "reportsTo": "genovese-boss-1931"
+    },
+    {
+        "id": "genovese-boss-1957",
+        "personId": "v_genovese",
+        "familyId": "genovese",
+        "role": "Boss",
+        "startYear": 1957,
+        "endYear": 1959
+    },
+    {
+        "id": "genovese-boss-1981",
+        "personId": "chin",
+        "familyId": "genovese",
+        "role": "Boss",
+        "startYear": 1981,
+        "endYear": 2005
+    },
+    {
+        "id": "gambino-boss-1957",
+        "personId": "c_gambino",
+        "familyId": "gambino",
+        "role": "Boss",
+        "startYear": 1957,
+        "endYear": 1976
+    },
+    {
+        "id": "gambino-under-1957",
+        "personId": "dellacroce",
+        "familyId": "gambino",
+        "role": "Underboss",
+        "startYear": 1957,
+        "endYear": 1985,
+        "reportsTo": "gambino-boss-1957"
+    },
+    {
+        "id": "gambino-boss-1985",
+        "personId": "gotti",
+        "familyId": "gambino",
+        "role": "Boss",
+        "startYear": 1985,
+        "endYear": 1992
+    },
+    {
+        "id": "lucchese-boss-1951",
+        "personId": "l_lucchese",
+        "familyId": "lucchese",
+        "role": "Boss",
+        "startYear": 1951,
+        "endYear": 1967
+    },
+    {
+        "id": "lucchese-boss-1973",
+        "personId": "funzi",
+        "familyId": "lucchese",
+        "role": "Boss",
+        "startYear": 1973,
+        "endYear": 1974
+    },
+    {
+        "id": "lucchese-under-1986",
+        "personId": "amuso",
+        "familyId": "lucchese",
+        "role": "Underboss",
+        "startYear": 1986,
+        "endYear": 1990
+    },
+    {
+        "id": "bonanno-boss-1931",
+        "personId": "j_bonanno",
+        "familyId": "bonanno",
+        "role": "Boss",
+        "startYear": 1931,
+        "endYear": 1968
+    },
+    {
+        "id": "bonanno-boss-1974",
+        "personId": "rastelli",
+        "familyId": "bonanno",
+        "role": "Boss",
+        "startYear": 1974,
+        "endYear": 1991
+    },
+    {
+        "id": "bonanno-boss-1991",
+        "personId": "massino",
+        "familyId": "bonanno",
+        "role": "Boss",
+        "startYear": 1991,
+        "endYear": 2004
+    },
+    {
+        "id": "colombo-boss-1931",
+        "personId": "profaci",
+        "familyId": "colombo",
+        "role": "Boss",
+        "startYear": 1931,
+        "endYear": 1962
+    },
+    {
+        "id": "colombo-boss-1963",
+        "personId": "g_colombo",
+        "familyId": "colombo",
+        "role": "Boss",
+        "startYear": 1963,
+        "endYear": 1971
+    },
+    {
+        "id": "colombo-boss-1973",
+        "personId": "persico",
+        "familyId": "colombo",
+        "role": "Boss",
+        "startYear": 1973,
+        "endYear": 2019
+    },
+    {
+        "id": "chicago-boss-1925",
+        "personId": "al_capone",
+        "familyId": "chicago",
+        "role": "Boss",
+        "startYear": 1925,
+        "endYear": 1931
+    },
+    {
+        "id": "chicago-under-1931",
+        "personId": "f_nitti",
+        "familyId": "chicago",
+        "role": "Underboss",
+        "startYear": 1931,
+        "endYear": 1943,
+        "reportsTo": "chicago-boss-1925"
+    }
+]

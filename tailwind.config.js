@@ -19,6 +19,7 @@ export default {
             fontFamily: {
                 serif: ['"Playfair Display"', 'Georgnia', 'serif'],
                 sans: ['"Inter"', 'sans-serif'],
+                typewriter: ['"Special Elite"', 'Courier', 'monospace'],
             }
         },
     },

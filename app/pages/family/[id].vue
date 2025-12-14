@@ -31,14 +31,30 @@
     </div>
 
     <!-- Members Roster -->
-    <div class="mb-12 flex items-center justify-between border-b border-mob-gold/10 pb-4">
-      <h2 class="text-3xl text-mob-gold">Known Associaties</h2>
+    <div class="mb-8 flex items-center justify-between border-b border-mob-gold/10 pb-4">
+      <div class="flex items-center gap-6">
+        <h2 class="text-3xl text-mob-gold">Associates</h2>
+        <div class="flex bg-mob-black/50 rounded-lg p-1 border border-mob-gold/20">
+            <button 
+                @click="viewMode = 'grid'" 
+                :class="['px-4 py-1.5 rounded text-xs uppercase tracking-widest transition-all', viewMode === 'grid' ? 'bg-mob-gold text-mob-black' : 'text-gray-400 hover:text-white']"
+            >
+                Grid
+            </button>
+            <button 
+                @click="viewMode = 'tree'" 
+                :class="['px-4 py-1.5 rounded text-xs uppercase tracking-widest transition-all', viewMode === 'tree' ? 'bg-mob-gold text-mob-black' : 'text-gray-400 hover:text-white']"
+            >
+                Hierarchy
+            </button>
+        </div>
+      </div>
       <NuxtLink to="/submit" class="bg-mob-gold/10 hover:bg-mob-gold/20 text-mob-gold px-4 py-2 rounded text-xs uppercase tracking-widest border border-mob-gold/30 transition-all">
         Report New Member
       </NuxtLink>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+    <div v-if="viewMode === 'grid'" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
       <div v-for="member in family.members" :key="member.id" class="group bg-mob-gray p-6 rounded border border-mob-gray hover:border-mob-gold/50 transition-all hover:-translate-y-1">
         <div class="flex gap-4">
           <img :src="member.imageUrl || 'https://via.placeholder.com/150'" class="w-20 h-20 object-cover rounded-sm grayscale group-hover:grayscale-0 transition-all" alt="">
@@ -52,10 +68,14 @@
           <p class="text-sm text-gray-400 font-light italic">"{{ member.famousFor }}"</p>
         </div>
       </div>
-      
-      <div v-if="family.members.length === 0" class="col-span-full py-12 text-center text-gray-500 italic">
+    </div>
+
+    <div v-else class="bg-mob-black/30 p-8 rounded-lg border border-mob-gold/10 overflow-hidden">
+        <FamilyTree :members="family.members" />
+    </div>
+
+    <div v-if="family.members.length === 0" class="col-span-full py-12 text-center text-gray-500 italic">
         No known made men in the database yet.
-      </div>
     </div>
   </div>
   
@@ -68,6 +88,7 @@
 <script setup>
 const route = useRoute()
 const { data: families, pending } = await useFetch('/api/families')
+const viewMode = ref('grid')
 
 const family = computed(() => {
   if (!families.value) return null

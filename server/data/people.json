@@ -1,0 +1,122 @@
+[
+    {
+        "id": "luciano",
+        "name": "Charles 'Lucky' Luciano",
+        "birthYear": 1897,
+        "deathYear": 1962,
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Lucky_Luciano_mugshot.jpg/400px-Lucky_Luciano_mugshot.jpg"
+    },
+    {
+        "id": "costello",
+        "name": "Frank Costello",
+        "birthYear": 1891,
+        "deathYear": 1973,
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Frank_Costello_1951.jpg/440px-Frank_Costello_1951.jpg"
+    },
+    {
+        "id": "v_genovese",
+        "name": "Vito Genovese",
+        "birthYear": 1897,
+        "deathYear": 1969,
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Vito_Genovese.jpg/440px-Vito_Genovese.jpg"
+    },
+    {
+        "id": "chin",
+        "name": "Vincent 'Chin' Gigante",
+        "birthYear": 1928,
+        "deathYear": 2005,
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/en/4/46/Vincent_Gigante.jpg"
+    },
+    {
+        "id": "c_gambino",
+        "name": "Carlo Gambino",
+        "birthYear": 1902,
+        "deathYear": 1976,
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Carlo_Gambino_Mugshot.jpg/440px-Carlo_Gambino_Mugshot.jpg"
+    },
+    {
+        "id": "dellacroce",
+        "name": "Aniello Dellacroce",
+        "birthYear": 1913,
+        "deathYear": 1985,
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Aniello_Dellacroce.jpg/440px-Aniello_Dellacroce.jpg"
+    },
+    {
+        "id": "gotti",
+        "name": "John Gotti",
+        "birthYear": 1940,
+        "deathYear": 2002,
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/John_Gotti.jpg/440px-John_Gotti.jpg"
+    },
+    {
+        "id": "l_lucchese",
+        "name": "Gaetano 'Tommy' Lucchese",
+        "birthYear": 1899,
+        "deathYear": 1967,
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Gaetano_Gagliano.jpg/440px-Gaetano_Gagliano.jpg"
+    },
+    {
+        "id": "funzi",
+        "name": "Carmine Tramunti",
+        "birthYear": 1910,
+        "deathYear": 1977
+    },
+    {
+        "id": "amuso",
+        "name": "Anthony Casso",
+        "birthYear": 1942,
+        "deathYear": 2020
+    },
+    {
+        "id": "j_bonanno",
+        "name": "Joseph Bonanno",
+        "birthYear": 1905,
+        "deathYear": 2002,
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Joseph_Bonanno.jpg/440px-Joseph_Bonanno.jpg"
+    },
+    {
+        "id": "rastelli",
+        "name": "Philip Rastelli",
+        "birthYear": 1918,
+        "deathYear": 1991
+    },
+    {
+        "id": "massino",
+        "name": "Joseph Massino",
+        "birthYear": 1943,
+        "deathYear": 2023
+    },
+    {
+        "id": "profaci",
+        "name": "Joseph Profaci",
+        "birthYear": 1897,
+        "deathYear": 1974,
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Joe_Profaci.jpg/440px-Joe_Profaci.jpg"
+    },
+    {
+        "id": "g_colombo",
+        "name": "Joseph Colombo",
+        "birthYear": 1923,
+        "deathYear": 1978
+    },
+    {
+        "id": "persico",
+        "name": "Carmine Persico",
+        "birthYear": 1933,
+        "deathYear": 2019
+    },
+    {
+        "id": "al_capone",
+        "name": "Al Capone",
+        "birthYear": 1899,
+        "deathYear": 1947,
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Al_Capone_mugshot.jpg/440px-Al_Capone_mugshot.jpg"
+    },
+    {
+        "id": "f_nitti",
+        "name": "Frank Nitti",
+        "birthYear": 1886,
+        "deathYear": 1943,
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Frank_Nitti_mugshot.jpg/440px-Frank_Nitti_mugshot.jpg"
+    }
+]
