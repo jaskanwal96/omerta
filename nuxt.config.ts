@@ -16,14 +16,4 @@ export default defineNuxtConfig({
   experimental: {
     clientFallback: true // Helps with some SSR libraries
   },
-  nitro: {
-    storage: {
-      db: {
-        driver: process.env.NODE_ENV === 'development' ? 'fs' : 'redis',
-        base: process.env.NODE_ENV === 'development' ? './server/data' : undefined,
-        url: process.env.REDIS_URL,
-        tls: true // Required for Vercel Redis usually
-      }
-    }
-  }
 })

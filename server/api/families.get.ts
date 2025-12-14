@@ -1,20 +1,14 @@
 
+import familiesData from '../data/families.json'
+import peopleData from '../data/people.json'
+import positionsData from '../data/positions.json'
+
+// Direct imports result in build-time bundling
+const families = familiesData as any[]
+const people = peopleData as any[]
+const positions = positionsData as any[]
+
 export default defineEventHandler(async (event) => {
-    // Use Nitro Storage
-    const storage = useStorage('db')
-
-    // Retrieve data asynchronously
-    const families = (await storage.getItem('families.json')) as any[] || []
-    let people: any[] = []
-    let positions: any[] = []
-
-    try {
-        people = (await storage.getItem('people.json')) as any[] || []
-        positions = (await storage.getItem('positions.json')) as any[] || []
-    } catch (e) {
-        // fallback if keys missing
-    }
-
     // Join Data
     const data = families.map((family: any) => {
 

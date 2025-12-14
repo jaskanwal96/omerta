@@ -1,4 +1,9 @@
+
 import { v4 as uuidv4 } from 'uuid'
+import pendingData from '../data/pending_members.json'
+
+// Note: In serverless/Vercel, modifying this array only affects the current execution context
+const pending = pendingData as any[]
 
 export default defineEventHandler(async (event) => {
     const body = await readBody(event)
@@ -9,10 +14,6 @@ export default defineEventHandler(async (event) => {
             statusMessage: 'Missing required fields',
         })
     }
-
-    // Use Nitro Storage
-    const storage = useStorage('db')
-    const pending = (await storage.getItem('pending_members.json')) as any[] || []
 
     const newMember = {
         id: uuidv4(),
@@ -26,8 +27,8 @@ export default defineEventHandler(async (event) => {
         newMember.reportsTo = body.reportsTo
     }
 
+    // In-memory update only
     pending.push(newMember)
-    await storage.setItem('pending_members.json', pending)
 
     return { success: true, message: 'Member submitted for review' }
 })
