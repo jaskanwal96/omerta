@@ -12,5 +12,8 @@ export default defineNuxtConfig({
         { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Special+Elite&display=swap' }
       ]
     }
+  },
+  experimental: {
+    clientFallback: true // Helps with some SSR libraries
   }
 })
