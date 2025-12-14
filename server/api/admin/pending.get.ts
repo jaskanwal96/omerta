@@ -1,10 +1,9 @@
-import fs from 'node:fs'
-import path from 'node:path'
 
 export default defineEventHandler(async (event) => {
-    const pendingPath = path.resolve(process.cwd(), 'server/data/pending_members.json')
+    // Use Nitro Storage
+    const storage = useStorage('db')
     try {
-        const pending = JSON.parse(fs.readFileSync(pendingPath, 'utf-8'))
+        const pending = (await storage.getItem('pending_members.json')) || []
         return pending
     } catch (e) {
         return []

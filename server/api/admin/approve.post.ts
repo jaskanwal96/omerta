@@ -1,18 +1,15 @@
-import fs from 'node:fs'
-import path from 'node:path'
 import { v4 as uuidv4 } from 'uuid'
 
 export default defineEventHandler(async (event) => {
     const body = await readBody(event)
     const { id, action } = body // action: 'approve' | 'reject'
 
-    const pendingPath = path.resolve(process.cwd(), 'server/data/pending_members.json')
-    const peoplePath = path.resolve(process.cwd(), 'server/data/people.json')
-    const positionsPath = path.resolve(process.cwd(), 'server/data/positions.json')
+    // Use Nitro Storage
+    const storage = useStorage('db')
 
-    let pending = []
+    let pending: any[] = []
     try {
-        pending = JSON.parse(fs.readFileSync(pendingPath, 'utf-8'))
+        pending = (await storage.getItem('pending_members.json')) as any[] || []
     } catch (e) { }
 
     const memberIndex = pending.findIndex((m: any) => m.id === id)
@@ -25,14 +22,14 @@ export default defineEventHandler(async (event) => {
 
     // Remove from pending
     pending.splice(memberIndex, 1)
-    fs.writeFileSync(pendingPath, JSON.stringify(pending, null, 2))
+    await storage.setItem('pending_members.json', pending)
 
     if (action === 'approve') {
-        let people = []
-        let positions = []
+        let people: any[] = []
+        let positions: any[] = []
         try {
-            people = JSON.parse(fs.readFileSync(peoplePath, 'utf-8'))
-            positions = JSON.parse(fs.readFileSync(positionsPath, 'utf-8'))
+            people = (await storage.getItem('people.json')) as any[] || []
+            positions = (await storage.getItem('positions.json')) as any[] || []
         } catch (e) { }
 
         // 1. Create Person Entry
@@ -61,14 +58,14 @@ export default defineEventHandler(async (event) => {
         }
 
         // ensure unique ID for position just in case
-        if (positions.find(p => p.id === newPosition.id)) {
+        if (positions.find((p: any) => p.id === newPosition.id)) {
             newPosition.id += '_' + uuidv4().substring(0, 4)
         }
 
         positions.push(newPosition)
 
-        fs.writeFileSync(peoplePath, JSON.stringify(people, null, 2))
-        fs.writeFileSync(positionsPath, JSON.stringify(positions, null, 2))
+        await storage.setItem('people.json', people)
+        await storage.setItem('positions.json', positions)
     }
 
     return { success: true }

@@ -1,5 +1,3 @@
-import fs from 'node:fs'
-import path from 'node:path'
 import { v4 as uuidv4 } from 'uuid'
 
 export default defineEventHandler(async (event) => {
@@ -12,13 +10,9 @@ export default defineEventHandler(async (event) => {
         })
     }
 
-    const pendingPath = path.resolve(process.cwd(), 'server/data/pending_members.json')
-    let pending = []
-    try {
-        pending = JSON.parse(fs.readFileSync(pendingPath, 'utf-8'))
-    } catch (e) {
-        // File might not exist or be empty
-    }
+    // Use Nitro Storage
+    const storage = useStorage('db')
+    const pending = (await storage.getItem('pending_members.json')) as any[] || []
 
     const newMember = {
         id: uuidv4(),
@@ -33,7 +27,7 @@ export default defineEventHandler(async (event) => {
     }
 
     pending.push(newMember)
-    fs.writeFileSync(pendingPath, JSON.stringify(pending, null, 2))
+    await storage.setItem('pending_members.json', pending)
 
     return { success: true, message: 'Member submitted for review' }
 })

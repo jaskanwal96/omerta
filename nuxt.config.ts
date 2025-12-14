@@ -15,5 +15,13 @@ export default defineNuxtConfig({
   },
   experimental: {
     clientFallback: true // Helps with some SSR libraries
+  },
+  nitro: {
+    storage: {
+      db: {
+        driver: 'fs',
+        base: './server/data'
+      }
+    }
   }
 })

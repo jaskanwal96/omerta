@@ -1,20 +1,18 @@
-import fs from 'node:fs'
-import path from 'node:path'
 
 export default defineEventHandler(async (event) => {
-    const familiesPath = path.resolve(process.cwd(), 'server/data/families.json')
-    const peoplePath = path.resolve(process.cwd(), 'server/data/people.json')
-    const positionsPath = path.resolve(process.cwd(), 'server/data/positions.json')
+    // Use Nitro Storage
+    const storage = useStorage('db')
 
-    const families = JSON.parse(fs.readFileSync(familiesPath, 'utf-8'))
-    let people = []
-    let positions = []
+    // Retrieve data asynchronously
+    const families = (await storage.getItem('families.json')) as any[] || []
+    let people: any[] = []
+    let positions: any[] = []
 
     try {
-        people = JSON.parse(fs.readFileSync(peoplePath, 'utf-8'))
-        positions = JSON.parse(fs.readFileSync(positionsPath, 'utf-8'))
+        people = (await storage.getItem('people.json')) as any[] || []
+        positions = (await storage.getItem('positions.json')) as any[] || []
     } catch (e) {
-        // fallback if files empty
+        // fallback if keys missing
     }
 
     // Join Data
@@ -33,8 +31,8 @@ export default defineEventHandler(async (event) => {
                 imageUrl: person.imageUrl,
                 role: pos.role,
                 yearsActive: `${pos.startYear || '?'} - ${pos.endYear || 'Present'}`,
-                famousFor: `Active during ${pos.startYear}-${pos.endYear}`, // generic filler or add to schema later
-                reportsTo: pos.reportsTo, // Crucial for tree
+                famousFor: `Active during ${pos.startYear}-${pos.endYear}`,
+                reportsTo: pos.reportsTo,
                 familyId: family.id
             }
         })
