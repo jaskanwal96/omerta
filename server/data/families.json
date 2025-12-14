@@ -1,0 +1,50 @@
+[
+    {
+        "id": "genovese",
+        "name": "Genovese Crime Family",
+        "city": "New York City, NY",
+        "founded": 1931,
+        "description": "One of the 'Five Families' that dominate organized crime activities in New York City and New Jersey. Known as the 'Ive League' of the Mafia.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Vito_Genovese.jpg/440px-Vito_Genovese.jpg"
+    },
+    {
+        "id": "gambino",
+        "name": "Gambino Crime Family",
+        "city": "New York City, NY",
+        "founded": 1910,
+        "description": "One of the 'Five Families'. Historically one of the most powerful crime syndicates in the US, especially under Carlo Gambino and later John Gotti.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Carlo_Gambino_Mugshot.jpg/440px-Carlo_Gambino_Mugshot.jpg"
+    },
+    {
+        "id": "bonanno",
+        "name": "Bonanno Crime Family",
+        "city": "New York City, NY",
+        "founded": 1931,
+        "description": "One of the 'Five Families'. Known for the Donnie Brasco infiltration and being kicked off the Commission for a period.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Joseph_Bonanno.jpg/440px-Joseph_Bonanno.jpg"
+    },
+    {
+        "id": "lucchese",
+        "name": "Lucchese Crime Family",
+        "city": "New York City, NY",
+        "founded": 1922,
+        "description": "One of the 'Five Families'. Known for their involvement in the garment district and major heists.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Gaetano_Gagliano.jpg/440px-Gaetano_Gagliano.jpg"
+    },
+    {
+        "id": "colombo",
+        "name": "Colombo Crime Family",
+        "city": "New York City, NY",
+        "founded": 1928,
+        "description": "The youngest of the 'Five Families'. Known for three internal wars.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Joe_Profaci.jpg/440px-Joe_Profaci.jpg"
+    },
+    {
+        "id": "chicago",
+        "name": "Chicago Outfit",
+        "city": "Chicago, IL",
+        "founded": 1910,
+        "description": "The major organized crime syndicate in Chicago, distinct from the Five Families. Rose to power under Al Capone.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Al_Capone_mugshot.jpg/440px-Al_Capone_mugshot.jpg"
+    }
+]
