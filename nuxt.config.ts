@@ -19,8 +19,10 @@ export default defineNuxtConfig({
   nitro: {
     storage: {
       db: {
-        driver: 'fs',
-        base: './server/data'
+        driver: process.env.NODE_ENV === 'development' ? 'fs' : 'redis',
+        base: process.env.NODE_ENV === 'development' ? './server/data' : undefined,
+        url: process.env.REDIS_URL,
+        tls: true // Required for Vercel Redis usually
       }
     }
   }
